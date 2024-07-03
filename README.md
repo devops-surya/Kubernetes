@@ -1,4 +1,4 @@
-                                    ```****"Embark on your journey to Kubernetes mastery and unlock the power to orchestrate and scale applications with ease."****```
+```**"Embark on your journey to Kubernetes mastery and unlock the power to orchestrate and scale applications with ease."**```
 
 **Kubernetes Mastery Repository**
 
