@@ -4,17 +4,17 @@ This folder consists of a Kubernetes (k8s) voting application. The application a
 
 ![Voting App Overview](../Images/Votingapp-arch.gif)
 
-- **Voting Interface**: Allows users to cast votes.
+- **Voting Interface**: Allows users to cast votes and runs on port 80 
 
 ![Voting Interface](../Images/votingscreen.PNG)
 
-- **Result Interface**: Allows users to see the voting results.
+- **Result Interface**: Allows users to see the voting results and runs on port 80 
 
 ![Voting Interface](../Images/resultscreen.PNG)
 
-- **Redis**: Serves as the in-memory database.
-- **Worker App**: Fetches data from Redis and updates the PostgreSQL database.
-- **PostgreSQL**: For storing result from worker app
+- **Redis**: Serves as the in-memory database and runs on port 6379 
+- **Worker App**: Fetches data from Redis and updates the PostgreSQL database.It is not a service 
+- **PostgreSQL**: For storing result from worker app and runs on port 5432 
 
 ## Application Overview
 
@@ -24,10 +24,15 @@ This folder consists of a Kubernetes (k8s) voting application. The application a
 - The Voting and Result applications are created as deployments in the manifests.
 
 ## Services
-
+- **Voting Application**: Exposed over a Nodeport service on Nodeport 30004. 
+- **Result Application**: Exposed over a Nodeport serviceon Nodeport 30005. 
 - **Redis**: Exposed as a ClusterIP service on port 6379.
-- **PostgreSQL**: Exposed as a service on port 5432.
+- **PostgreSQL**: Exposed as a ClusterIP service on port 5432.
 
 ## Manifest Files
 
-The folder includes all the required manifest files to create and deploy the application in Kubernetes.
+* The folder includes all the required manifest files to create and deploy the application in Kubernetes.
+
+```
+kubectl apply -f .
+```
