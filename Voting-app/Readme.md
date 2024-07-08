@@ -1,13 +1,17 @@
 # K8s Voting App
 
-This folder consists of a Kubernetes (k8s) voting application. The application includes:
+This folder consists of a Kubernetes (k8s) voting application. The application architecture is as below:
 
 ![Voting App Overview](../Images/Votingapp-arch.gif)
 
 - **Voting Interface**: Allows users to cast votes.
+
 ![Voting Interface](../Images/votingscreen.PNG)
+
 - **Result Interface**: Allows users to see the voting results.
+
 ![Voting Interface](../Images/resultscreen.PNG)
+
 - **Redis**: Serves as the in-memory database.
 - **Worker App**: Fetches data from Redis and updates the PostgreSQL database.
 - **PostgreSQL**: For storing result from worker app
